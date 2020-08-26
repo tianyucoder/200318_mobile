@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>视觉视口</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#info1{
+			font-size:130px;
+			background-color:skyblue;
+		}
+		#info2{
+			font-size:130px;
+			background-color:pink;
+		}
+	</style>
+</head>
+<body>
+	<div id="info1"></div>
+	<div id="info2"></div>
+	<script type="text/javascript" >
+		console.log('布局视口',document.documentElement.clientWidth);
+		console.log('视觉视口',window.innerWidth);
+		const info1 = document.getElementById('info1')
+		const info2 = document.getElementById('info2')
+		info1.innerHTML = '布局视口'+document.documentElement.clientWidth
+		info2.innerHTML = '视觉视口'+document.documentElement.clientWidth
+	</script>
+</body>
+</html>

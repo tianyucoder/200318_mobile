@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>布局视口</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#info{
+			font-size:130px;
+			width:981px;
+			height:200px;
+			background-color:skyblue;
+		}
+	</style>
+</head>
+<body>
+	<div id="info"></div>
+	<script type="text/javascript" >
+		console.log('布局视口宽度为',document.documentElement.clientWidth);
+		const info = document.getElementById('info')
+		info.innerHTML = document.documentElement.clientWidth
+	</script>
+</body>
+</html>
