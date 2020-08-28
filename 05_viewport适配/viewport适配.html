@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>viewport适配</title>
+	<meta name="viewport" content="width=375">
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#demo{
+			width: 345px;
+			height: 150px;
+			background-color:#8FAADC;
+			margin:0 auto;
+			margin-top: 15px;
+			border:1px solid black
+		}
+	</style>
+</head>
+<body>
+	<div id="demo"></div>
+	<script type="text/javascript" >
+		console.log(document.documentElement.clientWidth);
+	</script>
+</body>
+</html>
