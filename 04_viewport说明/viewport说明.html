@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>viewport说明</title>
+	<!-- <meta name="viewport" content="width=300"> -->
+	<!-- <meta name="viewport" content="initial-scale=1.0"> -->
+	<!-- <meta name="viewport" content="width=device-width,initial-scale=1.0"> -->
+	<!-- <meta name="viewport" content="maximum-scale=2.0"> -->
+	<!-- <meta name="viewport" content="user-scalable=no"> -->
+	<meta name="viewport" cotent="width=device-width,initial-scale=1.0,maximum-scale=2.0,minimum-scale=2.0,user-scalable=no,viewport-fit=cover">
+	<style>
+		#demo{
+			width: 200px;
+			height: 200px;
+			background-color: gray;
+		}
+		#info{
+			font-size:50px;
+		}
+	</style>
+</head>
+<body>
+	<div id="demo"></div>
+	<div id="info"></div>
+	<script type="text/javascript" >
+		// console.log('布局视口宽度为',document.documentElement.clientWidth);
+		const info = document.getElementById('info')
+		info.innerHTML ='视觉视口宽度为'+window.innerWidth
+		setInterval(() => {
+			info.innerHTML ='视觉视口宽度为'+window.innerWidth
+		},500);
+	</script>
+</body>
+</html>

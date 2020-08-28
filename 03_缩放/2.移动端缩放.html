@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>移动端缩放</title>
+	<style>
+		img{
+			width: 200px;
+			height: 160px;
+		}
+		div{
+			font-size:40px;
+		}
+	</style>
+</head>
+<body>
+	<img src="../imgs/1.jpg" alt="">
+	<img src="../imgs/2.jpg" alt="">
+	<img src="../imgs/3.jpg" alt="">
+	<img src="../imgs/4.jpg" alt="">
+	<div id="info1"></div>
+	<div id="info2"></div>
+	<script type="text/javascript" >
+	const info1 = document.getElementById('info1')
+	const info2 = document.getElementById('info2')
+	info1.innerHTML = '布局视口大小为'+document.documentElement.clientWidth
+	info2.innerHTML = '视觉视口大小为'+window.innerWidth
+	setInterval(()=>{
+		info1.innerHTML = '布局视口大小为'+document.documentElement.clientWidth
+		info2.innerHTML = '视觉视口大小为'+window.innerWidth
+	},500)
+	</script>
+</body>
+</html>
