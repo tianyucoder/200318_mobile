@@ -1,0 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+#demo {
+  width: 92vw;
+  height: 40vw;
+  background-color: #8FAADC;
+  margin: 0 auto;
+  margin-top: 4vw;
+}

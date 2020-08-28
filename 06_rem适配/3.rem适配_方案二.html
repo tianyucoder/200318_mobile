@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>rem适配方案二</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,viewport-fit=cover">
+	<style>
+		#demo{
+			width: 9.2rem;
+			height: 4rem;
+			background-color: #8FAADC;
+			margin:0 auto;
+			margin-top: 0.4rem;
+		}
+	</style>
+</head>
+<body>
+	<div id="demo"></div>
+	<script type="text/javascript" >
+		function adapter(){
+			//获取设备独立像素值
+			const w = document.documentElement.clientWidth
+			//计算根字体大小
+			const rootFontSize = w/10;
+			//设置根字体
+			document.documentElement.style.fontSize = rootFontSize + 'px'
+		}
+		adapter()
+		window.onresize = adapter
+	</script>
+</body>
+</html>
