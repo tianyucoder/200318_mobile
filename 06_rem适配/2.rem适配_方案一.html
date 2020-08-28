@@ -3,8 +3,44 @@
 <head>
 	<meta charset="UTF-8">
 	<title>rem适配方案一</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,viewport-fit=cover">
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#demo{
+			width: 3.45rem;
+			height: 1.50rem;
+			background-color:#8FAADC;
+			margin:0 auto;
+			margin-top: 0.15rem;
+			border:1px solid black;
+		}
+	</style>
 </head>
 <body>
-	
+	<div id="demo"></div>
+	<script type="text/javascript" >
+	/* 
+		核心过程：
+		1.根字体 = (手机横向设备独立像素值 * 100 )  / 设计稿宽度
+		2.编写样式时：
+			直接以rem为单位。
+			值为：设计值 / 100
+	 */
+
+	 function adapter (){
+		 //获取当前手机的设备独立像素值
+		const w = document.documentElement.clientWidth
+		//动态计算当前设备的根字体大小
+		const rootFontSize = (w*100)/375
+		//设置根字体大小
+		document.documentElement.style.fontSize = rootFontSize + 'px'
+	 }
+	 adapter()
+	 window.onresize = adapter
+		
+	</script>
 </body>
 </html>
