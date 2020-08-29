@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript" >
+
+	/* 
+			header{
+					box-sizing: border-box;
+					width:375px;
+					height:75px;
+					font-size:20px;
+					font-weight:bold;
+					font-family: PingFangSC-Regular,Arial,sans-serif;
+					text-align:center;
+					line-height:75px;
+			}
+
+			需求：上面的代码转为下面的
+
+			header{
+				box-sizing: border-box;
+				width:3.75rem;
+				height:0.75rem;
+				font-size:0.20rem;
+				font-weight:bold;
+				font-family: PingFangSC-Regular,Arial,sans-serif;
+				text-align:center;
+				line-height:0.75rem;
+		}
+		*/
+	
+		const cssstr = `
+		*{
+            margin:0;
+            padding:0;
+        }
+        body{
+            width:100%;
+            background: #eee;
+        }
+        header{
+            box-sizing: border-box;
+            width:375px;
+            height:75px;
+            font-size:20px;
+            font-weight:bold;
+            font-family: PingFangSC-Regular,Arial,sans-serif;
+            text-align:center;
+            line-height:75px;
+        }
+        section{
+            width:100%;
+            height:auto;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+        .bg{
+            background:#388dcf;
+        }
+        .bg2{
+            background:lightblue;
+        }
+        section .item{
+            width:343px;
+            height:175px;
+            margin:0 auto;
+            box-sizing: border-box;
+            border-radius:7.5px;
+            padding: 16px 17px 17px 12px;
+            display:flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-bottom:15px;
+        }
+        .pull-left{
+            float:left;
+        }
+        .clear{
+            clear:both;
+        }
+        .pull-right{
+            float:right;
+        }
+        .top .logo{
+            width: 39px;
+            height:39px;
+            border-radius: 50%;
+        }
+        .top .title{
+            color:white;
+        }
+        .top .title .bank{
+            font-size:17px;
+            font-weight: bold;
+            line-height:17px;
+        }
+        .top .title .card-type{
+            font-size:14px;
+            padding-top:4px;
+        }
+        .top .cardID{
+            padding-top:8px;
+            color:white;
+            font-family: PingFangSC-Regular, Arial, sans-serif ;
+            font-weight: bold;
+            font-size: 16px;
+            font-weight:bold;
+        }
+        .bottom{
+            color:white;
+            text-align:right;
+            font-size: 14px;
+        }
+        .hide{
+            color: #afc4e6;
+        }
+
+        .jianhang{
+            background: linear-gradient(to bottom right, #398cce, #3864be);
+            box-shadow: 0px 0px 3px #3864be;
+        }
+
+        .zhaoshang{
+            background: linear-gradient(to bottom right, #ff7566, #ff5262);
+            box-shadow: 0px 0px 3px #ff5262;
+        }
+        .wangshang{
+            background: linear-gradient(to bottom right, #01aa9a, #028caf);
+            box-shadow: 0px 0px 3px #028caf;
+        }
+        .nonghang{
+            background: linear-gradient(to bottom right, #438A4E, #0C4139);
+            box-shadow: 0px 0px 3px #0C4139;
+        }
+        .jiaotong{
+            background: linear-gradient(to bottom right, #A49264, #A58671);
+            box-shadow: 0px 0px 3px #A58671;
+        }`
+		function formate (str){
+			//定义正则表达式，匹配px
+			const reg = /((\d+\.)?\d+)px/g
+			return str.replace(reg,(a,b)=>{
+				return b/100 + 'rem'
+			})
+		}
+		const result = formate(cssstr)
+		console.log(result);
+		
+	</script>
+</body>
+</html>
