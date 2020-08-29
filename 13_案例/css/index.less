@@ -13,7 +13,159 @@ html,body{
 	position: absolute;
 	top: 0;
 	bottom: 49/@font;
-	background-color: orange;
+	background-color: #F5F5F5;
+	.content_item{
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: none;
+		/* 内容区-第一屏 */
+		&:nth-child(1){
+			.header{
+				width: 100%;
+				height: 44/@font;
+				display: flex;
+				align-items: center;
+				background-color: white;
+				.left{
+					font-size: 12/@font;
+					color:#666666;
+					display: flex;
+					margin-left: 15/@font;
+					align-items: center;
+					.triangle{
+						width: 7/@font;
+						height: 4/@font;
+						margin-left: 5/@font;
+						background-size: 100%;
+						background-image: url('../img/Triangle.png');
+					}
+				}
+				.center{
+					margin-left: 81/@font;
+					font-size: 14/@font;
+					color:#333333;
+				}
+				.right{
+					width: 25/@font;
+					height: 25/@font;
+					margin-left: 94/@font;
+					background-size: 100%;
+					background-image: url('../img/nav_filter.png');
+				}
+			}
+			.banner{
+				width: 100%;
+				height: 94/@font;
+			}
+			.check{
+				width: 100%;
+				height: 44/@font;
+				font-size: 16/@font;
+				display: flex;
+				margin-bottom: 11/@font;
+				background-color: white;
+				.hot{
+					position: relative;
+					width: 50%;
+					text-align:center;
+					line-height: 44/@font;
+					&::after{
+						content: '';
+						position: absolute;
+						bottom: 0;
+						left: 50%;
+						transform: translateX(-50%);
+						display: block;
+						width: 20/@font;
+						height: 2/@font;
+						background-color: black;
+					}
+				}
+				.will{
+					width: 50%;
+					line-height: 44/@font;
+					text-align:center;
+				}
+			}
+			.film{
+				width: 100%;
+				.top{
+					position: relative;
+					display: flex;
+					width: 100%;
+					height: 116/@font;
+					background-color: white;
+					.poster{
+						width: 68/@font;
+						height: 90/@font;
+						margin-left: 15/@font;
+						margin-top: 16/@font;
+					}
+					.info{
+						margin-top: 15/@font;
+						margin-left: 10/@font;
+						span{
+							display: block;
+						}
+						.name{
+							font-size: 15/@font;
+						}
+						.other{
+							color:#999999;
+							font-size: 12/@font;
+						}
+						.tags{
+							display: flex;
+							font-size: 0;
+							span{
+								font-size: 12/@font;
+								margin-right: 5/@font;
+							}
+							.first{
+								border: 1/@font solid #FF4E4E;
+								border-radius: 2/@font;
+								color:#FF4E4E;
+							}
+							.sale{
+								border: 1/@font solid #FF8500;
+								border-radius: 2/@font;
+								color:#FF8500;
+							}
+							.star{
+								border: 1/@font solid #BC75F3 ;
+								border-radius: 2/@font;
+								color:#BC75F3;
+							}
+							.point{
+								border: 1/@font solid #6CC531;
+								border-radius: 2/@font;
+								color:#6CC531;
+							}
+						}
+					}
+					.buy{
+						position: absolute;
+						top: 80/@font;
+						right: 15/@font;
+						width: 60/@font;
+						height: 26/@font;
+						font-size: 14/@font;
+						text-align:center;
+						color:white;
+						line-height:26/@font;
+						background-image: linear-gradient(90deg, #FF7530 0%, #FF5200 100%);
+						box-shadow: 0 2/@font 6/@font 0 #F4BEA4;
+						border-radius: 61/@font;
+					}
+				}
+			}
+		}
+		&.active{
+			display:block;
+		}
+	}
 }
 #footer{
 	position: fixed;
@@ -26,6 +178,11 @@ html,body{
 		margin-top: 3/@font;
 		font-size: 12/@font;
 		color: #999999;
+		.footer_text{
+			&.active{
+				color:#FF5200
+			}
+		}
 		.footer_icon{
 			width: 25/@font;
 			height: 25/@font;
@@ -36,24 +193,36 @@ html,body{
 			margin-left: 35/@font;
 			.footer_icon{
 				background-image: url('../img/tab_home_normal.png');
+				&.active{
+					background-image: url('../img/tab_home_selected.png');
+				}
 			}
 		}
 		&:nth-child(2){
 			margin-left: 69/@font;
 			.footer_icon{
 				background-image: url('../img/tab_store_normal.png');
+				&.active{
+					background-image: url('../img/tab_store_selected.png');
+				}
 			}
 		}
 		&:nth-child(3){
 			margin-left: 70/@font;
 			.footer_icon{
 				background-image: url('../img/tab_activity_normal.png');
+				&.active{
+					background-image: url('../img/tab_activity_selected.png');
+				}
 			}
 		}
 		&:nth-child(4){
 			margin-left: 68.8/@font;
 			.footer_icon{
 				background-image: url('../img/tab_mine_normal.png');
+				&.active{
+					background-image: url('../img/tab_mine_selected.png');
+				}
 			}
 		}
 	}
