@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Document</title>
+	<style>
+		#demo{
+			width: 3.45rem;
+			height: 1.5rem;
+			background-color: skyblue;
+			margin:0 auto;
+			margin-top: 0.15rem;
+			border:1px solid black;
+		}
+	</style>
+</head>
+<body>
+	<div id="demo"></div>
+	<script type="text/javascript" >
+			function adapter (){
+				//获取当前手机的设备独立像素值
+				const w = document.documentElement.clientWidth
+				//动态计算当前设备的根字体大小
+				const rootFontSize = (w*100)/375
+				//设置根字体大小
+				document.documentElement.style.fontSize = rootFontSize + 'px'
+			}
+			adapter()
+			window.onresize = adapter
+			//获取meta标签
+			const meta = document.querySelector('meta[name=viewport]')
+			//计算initial-scale的值
+			const scale = 1 / window.devicePixelRatio
+			//重置设置meta标签
+			meta.setAttribute('content','width=device-width, initial-scale='+scale)
+			//获取当前根字体大小
+			const root = parseInt(document.documentElement.style.fontSize)
+			//重置设置根字体
+			document.documentElement.style.fontSize = root * window.devicePixelRatio + 'px'
+
+	</script>
+</body>
+</html>
